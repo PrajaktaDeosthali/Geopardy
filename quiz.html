@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<!-- head of the document -->
+<head> 
+<title>Geopardy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="author" content="prajakta deosthali">
+<!-- 1185340 --> 
+<!-- stylesheet document --> 
+<link rel="stylesheet" href="css/style.css">
+<!-- jQuery from Google CDN --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- JavaScript document --> 
+<script src="javascript/questions.js"></script>
+</head>
+
+<body>
+<!-- Header of the application --> 
+<div id="quizheader" class="hw2-container hw2-row hw2-teal hw2-center hw2-text-shadow">
+<h2 title="Quiz application" class="hw2-animate-zoom">Geopardy</h2>
+   <span title="Today is" class="hw2-container hw2-large" style="float:right" id="today"></span>
+</div>
+
+<!-- Randomly chosen topic --> 
+<div class="hw2-topnav hw2-large hw2-center hw2-row hw2-black" id="topic"> 
+ <p style="color:white"> Topic for Today&nbsp;<span id="displayTopic" class="hw2-xlarge hw2-btn hw2-orange hw2-animate-opacity">&nbsp;</span> </p>
+</div>
+
+<div id="mainbody" class="hw2-row hw2-teal">
+<!-- List of topics --> 
+<div id="listTopics" class="hw2-quarter hw2-card hw2-orange" onclick="document.getElementById('mod1').style.display='block'">
+<p class="hw2-btn hw2-orange hw2-large"> Topics </p>
+<ul class="hw2-ul hw2-hoverable">
+<li>USA</li>
+<li>Americas</li>   
+<li>Europe</li>
+<li>Asia</li>
+<li>Australia</li>
+</ul>
+</div>
+<!-- Modal message to the user --> 
+<div id="mod1" class="hw2-modal">
+ <div class="hw2-modal-content">
+    <div class="hw2-container hw2-black">
+      <span onclick="document.getElementById('mod1').style.display='none'" class="hw2-closebtn">×</span>
+      <p>Please come back later to try these topics!</p>  
+       <p>Happy Quizzing! </p>      
+    </div>
+  </div>
+</div>
+<!-- Display section of application --> 
+<div class="hw2-half hw2-center hw2-large" >
+
+				<p id ="question" class="hw2-center hw2-large"><span class="hw2-xlarge hw2-tag hw2-teal">Happy Quizzing!</span></p><br>		
+				<p id="scorepara" class="hw2-center hw2-large" style="display:none">Your Score :<span id ="displayScore"></span></p>	
+				<p id="answer"></p>
+			
+
+</div>
+<!-- ScoreCard --> 
+<div class="hw2-quarter hw2-card hw2-orange hw2-animate-opacity" id="yourscore" style="display:none">
+
+				<p id = "right" class="hw2-center hw2-large hw2-btn hw2-orange ">Correct Answers</p><br>	
+                <label id = "rightScore" class="hw2-center hw2-large hw2-btn hw2-orange ">0</label><br>
+				
+				<p id = "wrong" class="hw2-center hw2-large hw2-btn hw2-orange">Wrong Answers</p><br>
+                <label id = "wrongScore" class="hw2-center hw2-large hw2-btn hw2-orange ">0</label><br>
+                <br /> 
+</div> 
+    
+</div>
+
+<div class="hw2-row hw2-teal">
+<div class="hw2-third">&nbsp;</div>
+<div class="hw2-third hw2-center">
+<!-- Start button --> 
+<p>
+<button id="start" class="hw2-orange hw2-badge hw2-jumbo" onclick="startQuiz()">Go!</button>
+</p>
+<!-- Control section --> 
+                <button id="next" class="hw2-btn hw2-orange hw2-xlarge" style="display:none" onclick="displayNext()">Next</button> 
+				<button id="submit" class="hw2-btn hw2-orange hw2-xlarge" style="display:none" onclick="submit()">Submit</button>
+				<button id="quit" class="hw2-btn hw2-orange hw2-badge hw2-jumbo" style="display:none" onclick="document.getElementById('mod2').style.display='block'">Quit</button>
+			
+</div>  
+</div>
+<!-- Modal on quitting the application --> 
+<div id="mod2" class="hw2-modal">
+ <div class="hw2-modal-content">
+    <div class="hw2-container hw2-black">
+      <span onclick="document.getElementById('mod2').style.display='none'" class="hw2-closebtn">×</span>
+      <p>Thanks for playing quiz with us!</p>  
+       <p>Please refresh the page for one more round. </p>      
+    </div>
+  </div>
+</div>
+<div class="hw2-teal">
+<br/><br/> <br /> <br /> <br />
+</div>
+<!-- Footer --> 
+<footer class="hw2-container hw2-center hw2-black">
+  <h4>Follow Us</h4>
+<a class="hw2-btn-floating" href="https://www.facebook.com/prajakta.deosthali.5" target="_blank">
+<img src="images/facebook.png" alt="Facebook"/>
+</a>
+<a class="hw2-btn-floating" href="https://twitter.com/d_prachi" target="_blank">
+<img src="images/twitter.png" alt="Twitter" />
+</a>
+<a class="hw2-btn-floating" href="https://plus.google.com/104358308347296536500" target="_blank">
+<img src="images/google.png" alt="Google" />
+</a>
+<br>
+<p>&copy; All rights reserved.</p>
+</footer>
+</body>
+</html>
